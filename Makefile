@@ -139,6 +139,8 @@ run-local-node: kill-sei-node build-docker-node
 	--name sei-node \
 	--network host \
 	--user="$(shell id -u):$(shell id -g)" \
+	-p 26657:26657 \
+	-p 8545:8545 \
 	-v $(PROJECT_HOME):/sei-protocol/sei-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
