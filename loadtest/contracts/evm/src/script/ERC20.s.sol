@@ -12,6 +12,7 @@ contract ERC20TokenScript is Script {
 
     // forge script script/ERC20.s.sol:ERC20TokenScript
     function run() public {
+        // put in a .env file
         uint privateKey = vm.envUint("DEV_PRIVATE_KEY");
         address acc = vm.addr(privateKey);
 
