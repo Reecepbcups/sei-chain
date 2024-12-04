@@ -9,7 +9,7 @@ seid version # Uncomment the below line if there are any dependency issues
 
 # Initialize validator node
 MONIKER="sei-rpc-node"
-seid init --chain-id sei "$MONIKER"
+seid init --chain-id=sei-9 "$MONIKER"
 
 # Copy configs
 cp docker/rpcnode/config/app.toml ~/.sei/config/app.toml
