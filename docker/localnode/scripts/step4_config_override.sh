@@ -15,3 +15,6 @@ sed -i'' -e 's/persistent-peers = ""/persistent-peers = "'$PEERS'"/g' ~/.sei/con
 
 # Override snapshot directory
 sed -i.bak -e "s|^snapshot-directory *=.*|snapshot-directory = \"./build/generated/node_$NODE_ID/snapshots\"|" ~/.sei/config/app.toml
+
+# update unsafe-commit-timeout-override in the config.toml to 1s for better relaying experience
+sed -i'' -e 's/unsafe-commit-timeout-override = "50ms"/unsafe-commit-timeout-override = "2s"/g' ~/.sei/config/config.toml
