@@ -5,12 +5,17 @@
 
 evm_endpoint=$1
 
+# if evm_endpoint is unset, use http://0.0.0.0:8545
+if [ -z "$evm_endpoint" ]; then
+  evm_endpoint="http://0.0.0.0:8545"
+fi
+
 # first fund account if necessary
 THRESHOLD=100000000000000000000 # 100 Eth
 ACCOUNT="0xF87A299e6bC7bEba58dbBe5a5Aa21d49bCD16D52"
 BALANCE=$(cast balance $ACCOUNT --rpc-url "$evm_endpoint")
 if (( $(echo "$BALANCE < $THRESHOLD" | bc -l) )); then
-  printf "12345678\n" | ~/go/bin/seid tx evm send $ACCOUNT 100000000000000000000 --from admin --evm-rpc "$evm_endpoint"
+  printf "12345678\n" | seid tx evm send $ACCOUNT 100000000000000000000 --from admin --evm-rpc "$evm_endpoint"
   sleep 3
 fi
 cd loadtest/contracts/evm || exit 1
