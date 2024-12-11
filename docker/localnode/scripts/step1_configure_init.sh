@@ -34,7 +34,7 @@ cp docker/localnode/config/price_feeder_config.toml "$ORACLE_CONFIG_FILE"
 # Set up persistent peers
 SEI_NODE_ID=$(seid tendermint show-node-id)
 NODE_IP=$(hostname -i | awk '{print $1}')
-echo "$SEI_NODE_ID@$NODE_IP:26656" >> build/generated/persistent_peers.txt
+echo "$SEI_NODE_ID@$NODE_IP:27656" >> build/generated/persistent_peers.txt
 
 # Create a new account
 ACCOUNT_NAME="node_admin"

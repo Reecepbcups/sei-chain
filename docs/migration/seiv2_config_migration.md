@@ -10,7 +10,7 @@ We will focus particularly on the `config.toml` and `app.toml`.
 For the `config.toml`, there are only minimal changes required adding in some params to the
 mempool config. For the `app.toml`, we will make sure to enable seidb and add in a whole section for evm.
 
-# Config.toml 
+# Config.toml
 
 ## Step 1: Add Extra Mempool Configurations
 
@@ -144,7 +144,7 @@ root-ca-file = ""
 [rpc]
 
 # TCP or UNIX socket address for the RPC server to listen on
-laddr = "tcp://127.0.0.1:26657"
+laddr = "tcp://127.0.0.1:27657"
 
 # A list of origins a cross-domain request can be executed from
 # Default value '[]' disables cors support
@@ -244,13 +244,13 @@ pprof-laddr = "localhost:6060"
 queue-type = "simple-priority"
 
 # Address to listen for incoming connections
-laddr = "tcp://0.0.0.0:26656"
+laddr = "tcp://0.0.0.0:27656"
 
 # Address to advertise to peers for them to dial
 # If empty, will use the same port as the laddr,
 # and will introspect on the listener or use UPnP
 # to figure out the address. ip and port are required
-# example: 159.89.10.97:26656
+# example: 159.89.10.97:27656
 external-address = ""
 
 # Comma separated list of peers to be added to the peer store
@@ -529,7 +529,7 @@ psql-conn = ""
 prometheus = true
 
 # Address to listen for Prometheus collector(s) connections
-prometheus-listen-addr = ":26660"
+prometheus-listen-addr = ":26661"
 
 # Maximum number of simultaneous connections.
 # If you want to accept a larger number than the default, make sure
@@ -579,7 +579,7 @@ verify-light-block-timeout = "1m0s"
 blacklist-ttl = "5m0s"
 ```
 
-# App.toml 
+# App.toml
 
 ## Step 1: Enable OCC
 
@@ -888,7 +888,7 @@ offline = false
 enable = true
 
 # Address defines the gRPC server address to bind to.
-address = "0.0.0.0:9090"
+address = "0.0.0.0:9190"
 
 ###############################################################################
 ###                        gRPC Web Configuration                           ###
@@ -901,7 +901,7 @@ address = "0.0.0.0:9090"
 enable = true
 
 # Address defines the gRPC-web server address to bind to.
-address = "0.0.0.0:9091"
+address = "0.0.0.0:9191"
 
 # EnableUnsafeCORS defines if CORS should be enabled (unsafe - use it at your own risk).
 enable-unsafe-cors = false

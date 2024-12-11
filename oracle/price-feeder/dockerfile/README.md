@@ -42,7 +42,7 @@ backend = "file"
 dir = "/root/.sei"
 
 [rpc]
-grpc_endpoint = "localhost:9090"
+grpc_endpoint = "localhost:9190"
 rpc_timeout = "100ms"
 tmrpc_endpoint = "http://localhost:26657"
 

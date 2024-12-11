@@ -10,7 +10,7 @@ SHELL ["/bin/bash", "-c"]
 
 WORKDIR /sei-protocol/sei-chain
 
-EXPOSE 26656 26657 26658 9090 9091
+EXPOSE 27656 27657 26658 9190 9191
 
 CMD ["/usr/bin/deploy.sh"]
 

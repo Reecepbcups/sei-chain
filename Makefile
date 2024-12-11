@@ -140,6 +140,7 @@ run-local-node: kill-sei-node build-docker-node
 	--network host \
 	--user="$(shell id -u):$(shell id -g)" \
 	-p 26657:26657 \
+	-p 27657:27657 \
 	-p 8545:8545 \
 	-v $(PROJECT_HOME):/sei-protocol/sei-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
@@ -160,7 +161,7 @@ run-rpc-node: build-rpc-node
     -v $(PROJECT_HOME)/../sei-db:/sei-protocol/sei-db:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
-	-p 26668-26670:26656-26658 \
+	-p 26668-26670:27656-26658 \
 	--platform linux/x86_64 \
 	sei-chain/rpcnode
 .PHONY: run-rpc-node
@@ -176,7 +177,7 @@ run-rpc-node-skipbuild: build-rpc-node
     -v $(PROJECT_HOME)/../sei-db:/sei-protocol/sei-db:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
-	-p 26668-26670:26656-26658 \
+	-p 26668-26670:27656-26658 \
 	--platform linux/x86_64 \
 	--env SKIP_BUILD=true \
 	sei-chain/rpcnode

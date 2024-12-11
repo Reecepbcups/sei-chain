@@ -17,8 +17,8 @@ cp docker/rpcnode/config/config.toml ~/.sei/config/config.toml
 cp build/generated/genesis.json ~/.sei/config/genesis.json
 
 # Override state sync configs
-STATE_SYNC_RPC="192.168.10.10:26657"
-STATE_SYNC_PEER="2f9846450b7a3dcf4af1ac0082e3279c16744df8@172.31.9.18:26656,ec98c4a28a2023f4f976828c8a8e7127bfef4e1b@172.31.4.96:26656,b03014d67384fb0ef6ad992c77cefe4f9d2c1640@172.31.4.219:26656"
+STATE_SYNC_RPC="192.168.10.10:27657"
+STATE_SYNC_PEER="2f9846450b7a3dcf4af1ac0082e3279c16744df8@172.31.9.18:27656,ec98c4a28a2023f4f976828c8a8e7127bfef4e1b@172.31.4.96:27656,b03014d67384fb0ef6ad992c77cefe4f9d2c1640@172.31.4.219:27656"
 curl "$STATE_SYNC_RPC"/net_info |jq -r '.peers[] | .url' |sed -e 's#mconn://##' >> build/generated/PEERS
 STATE_SYNC_PEER=$(paste -s -d ',' build/generated/PEERS)
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .block.header.height)
