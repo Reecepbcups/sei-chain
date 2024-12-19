@@ -33,7 +33,7 @@ All these features combine to unlock a brand new, scalable design space for the 
 * 1 TB NVME SSD
 * 16 Cores (modern CPU's)
 
-## Operating System 
+## Operating System
 
 > Linux (x86_64) or Linux (amd64) Recommended Arch Linux
 
@@ -42,11 +42,11 @@ All these features combine to unlock a brand new, scalable design space for the 
 * Arch Linux: `pacman -S go`
 * Ubuntu: `sudo snap install go --classic`
 
-> Prerequisite: git. 
+> Prerequisite: git.
 * Arch Linux: `pacman -S git`
 * Ubuntu: `sudo apt-get install git`
 
-> Optional requirement: GNU make. 
+> Optional requirement: GNU make.
 * Arch Linux: `pacman -S make`
 * Ubuntu: `sudo apt-get install make`
 
@@ -75,7 +75,7 @@ make install
 * Initialize node: `seid init <moniker> --chain-id sei-testnet-1`
 
 * Download the Genesis file: `wget https://github.com/sei-protocol/testnet/raw/main/sei-testnet-1/genesis.json -P $HOME/.sei/config/`
- 
+
 * Edit the minimum-gas-prices in ${HOME}/.sei/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01usei"/g' $HOME/.sei/config/app.toml`
 
 * Start seid by creating a systemd service to run the node in the background
@@ -105,8 +105,8 @@ WantedBy=multi-user.target
 
 **Start seid on Linux**
 
-* Reload the service files: `sudo systemctl daemon-reload` 
-* Create the symlinlk: `sudo systemctl enable seid.service` 
+* Reload the service files: `sudo systemctl daemon-reload`
+* Create the symlinlk: `sudo systemctl enable seid.service`
 * Start the node sudo: `systemctl start seid && journalctl -u seid -f`
 
 **Start a chain on 4 node docker cluster**
@@ -130,9 +130,9 @@ seid tx staking create-validator \
 --pubkey $(seid tendermint show-validator) \
 --min-self-delegation="1" \
 --amount <token delegation>usei \
---node localhost:26657
+--node localhost:27657
 ```
 # Build with Us!
-If you are interested in building with Sei Network: 
-Email us at team@seinetwork.io 
+If you are interested in building with Sei Network:
+Email us at team@seinetwork.io
 DM us on Twitter https://twitter.com/SeiNetwork

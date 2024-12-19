@@ -43,6 +43,6 @@ COPY --from=go-builder /code/build/seid /usr/bin/seid
 
 
 # rest server, tendermint p2p, tendermint rpc
-EXPOSE 1317 26656 26657
+EXPOSE 1317 27656 27657
 
 CMD ["/usr/bin/seid", "version"]
